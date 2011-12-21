@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>	
+	<meta charset="utf-8"> 
+	<title>Webkit Gradient Transitions, sorta</title>
+	<meta name="description" content="Workaround solution for the inability to animate gradients with webkit transitions">
+	
+	<style>
+		/* - Igore all this, just general styles ---*/
+		
+		body
+		{
+			font-family: arial;
+			margin: 0 auto;
+			padding-top: 30px;
+			width: 80%;
+		}
+		
+		#examples
+		{
+			text-align: center;
+		}
+		
+		#examples a
+		{
+			border: 1px solid #8d8d8d;
+			border-radius: 6px;
+			color: #303030;
+			display: block;
+			font-size: 22px;
+			font-weight: bold;
+			margin: 20px auto;
+			padding: 15px 0;
+			text-decoration: none;
+			text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 1px;
+			width: 50%;
+		}
+		
+		#desciption
+		{
+			display: block;
+			font-size: 12px;
+			margin: 0 auto;
+			padding-top: 20px;
+			width: 50%;
+		}
+		
+		i
+		{
+			font-size: 12px;
+		}
+		
+	</style>
+	
+	<style>
+		
+		/* - Look at this part ---*/
+		
+		a
+		{
+			-webkit-transition: background-color 0.4s ease-out;
+		}
+		
+		
+		
+		
+		/* - Green Button ---*/
+		
+		#one
+		{
+			background-color: #d7ff37;
+			background-image: -webkit-gradient(linear, left top, left bottom,
+													color-stop(0%, rgba(229, 255, 174, 0.8)),
+													color-stop(100%, rgba(43, 182, 0, 0.7))
+												);
+		}
+		
+			#one:hover
+			{
+				background-color: #42b000;
+			}
+		
+		/* - End Green Button ---*/
+		
+		
+		
+		/* - Grey Button ---*/
+			
+		#two
+		{
+			background-color: #dbdbdb;
+			background-image: -webkit-gradient(linear, left top, left bottom,
+													color-stop(0%, rgba(255, 255, 255, 0.9)),
+													color-stop(100%, rgba(0, 0, 0, 0.6))
+												);
+		}
+		
+			#two:hover
+			{
+				background-color: #353535;
+			}
+			
+		/* - End Grey Button ---*/
+			
+			
+			
+			
+			
+		/* - Red Button ---*/
+			
+		#three
+		{
+			background-color: #ff3c3c;
+			background-image: -webkit-gradient(linear, left top, left bottom,
+													color-stop(0%, rgba(255, 200, 200, 0.8)),
+													color-stop(100%, rgba(102, 0, 0, 0.8))
+												);
+		}
+		
+			#three:hover
+			{
+				background-color: #6f0000;
+			}
+			
+		/* - End Red Button ---*/
+		
+		
+		
+		
+		/* - More complex example: This is the button that I needed the solution to create --*/
+		/* -- It has extra styles not relating to the gradient transition example --*/
+		
+		#examples #join-btn
+		{
+			background-color: #fff71a;
+			background-image: -moz-linear-gradient(top, rgba(255, 234, 0, 0.6) 0%, 
+														rgba(255, 228, 0, 0.8) 41%, 
+														rgba(236, 167, 0, 0.8) 96%, 
+														rgba(255, 239, 87, 0.8) 100%
+													);
+													
+			background-image: -webkit-gradient(linear, left top, left bottom, 
+														color-stop(0%, rgba(255, 234, 0, 0.6)),
+														color-stop(41%, rgba(255, 228, 0, 0.9)), 
+														color-stop(96%, rgba(236, 167, 0, 0.8)), 
+														color-stop(100%, rgba(255, 239, 87, 0.8))
+													);
+			border: 1px solid #ffcc00;
+			-webkit-border-radius: 6px;
+			-moz-border-radius: 6px;
+			border-radius: 6px;
+			-moz-box-shadow: inset 0px 2px 2px #fff;
+			-webkit-box-shadow: inset 0px 2px 2px #fff;
+			box-shadow: inset 0px 2px 2px #fff;
+			color: #2f2f2f;
+			display: block;
+			font-size: 24px;
+			padding: 12px 0;
+			text-shadow: #fff 0 1px 1px;
+			-webkit-transition: background-color 0.2s linear,
+								border-color 0.2s linear,
+								color 0.2s linear;
+		}
+		
+			#examples #join-btn:hover
+			{
+				color: #000;
+				background-color: #f2ab01;
+				border-color: #ffb400;
+			}
+	</style>
+	
+</head>
+<body>
+	<section id="examples">
+		<a id="one" href="#">Wello Horld</a>
+		<a id="two" href="#">Roll Over This</a>
+		<a id="three" href="#">Pala Tute!</a>
+		<a id="join-btn" href="#">Join Today</a>
+		<i>You should view source now</i>
+	</section>
+	
+	<section id="desciption">
+	<h3>What's this all about?</h3>
+	<p>
+		Currently, it seems that it is not possible to animate a webkit-gradient background image with a webkit-transition. 
+		<a href="http://screenflicker.com/mike/code/more-webkit-transition-funniness/">This article</a> says that it is possible, but I've not been able to get it to work following the instructions in the article.
+	</p>
+	<p>
+		<b>This isn't a hack or a perfect solution and it is only for webkit</b>, this is a workaround I used that worked for my purposes, maybe it will work for you.<br/>
+		Instead of animating the background gradient, I animate the background color. I needed to set the colors of the gradient to be partially transparent so you can "see through" them to the background color.
+		Since I was then working with partially transparent colors, I needed to either brighten or darken the colors so that their default state matched what was originally designed. I don't have an exact formula for this, I would just eyeball it until it looked right.
+	</p>
+	<p>
+		Hopefully webkit (and other browsers) will implement the ability to animate background gradients, until then this workaround accomplishes a very similar effect that I am looking for.
+	</p>
+	<p>
+		Follow <a href="http://twitter.com/thegaw">thegaw</a>
+	</p>
+	</section>
+</body>
+</html>

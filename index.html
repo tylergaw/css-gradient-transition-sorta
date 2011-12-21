@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>	
 	<meta charset="utf-8"> 
@@ -8,21 +8,17 @@
 	<style>
 		/* - Igore all this, just general styles ---*/
 		
-		body
-		{
-			font-family: arial;
+		body {
+			font-family: helvetica;
 			margin: 0 auto;
 			padding-top: 30px;
-			width: 80%;
 		}
 		
-		#examples
-		{
+		#examples {
 			text-align: center;
 		}
 		
-		#examples a
-		{
+		#examples a {
 			border: 1px solid #8d8d8d;
 			border-radius: 6px;
 			color: #303030;
@@ -36,8 +32,7 @@
 			width: 50%;
 		}
 		
-		#desciption
-		{
+		#desciption {
 			display: block;
 			font-size: 12px;
 			margin: 0 auto;
@@ -45,20 +40,17 @@
 			width: 50%;
 		}
 		
-		i
-		{
+		i {
 			font-size: 12px;
 		}
-		
-	</style>
-	
-	<style>
-		
+				
 		/* - Look at this part ---*/
 		
-		a
-		{
+		a {
+		  -moz-transition: background-color 0.4s ease-out;
+		  -o-transition: background-color 0.4s ease-out;
 			-webkit-transition: background-color 0.4s ease-out;
+			transition: background-color 0.4s ease-out;
 		}
 		
 		
@@ -66,17 +58,16 @@
 		
 		/* - Green Button ---*/
 		
-		#one
-		{
+		#one {
 			background-color: #d7ff37;
-			background-image: -webkit-gradient(linear, left top, left bottom,
-													color-stop(0%, rgba(229, 255, 174, 0.8)),
-													color-stop(100%, rgba(43, 182, 0, 0.7))
-												);
+			background-image: -moz-linear-gradient(top, rgba(229, 255, 174, 0.8), rgba(43, 182, 0, 0.7));
+			background-image: -o-linear-gradient(top, rgba(229, 255, 174, 0.8), rgba(43, 182, 0, 0.7));
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(229, 255, 174, 0.8)), to(rgba(43, 182, 0, 0.7)));
+			background-image: -webkit-linear-gradient(top, rgba(229, 255, 174, 0.8), rgba(43, 182, 0, 0.7));
+			background-image: linear-gradient(top, rgba(229, 255, 174, 0.8), rgba(43, 182, 0, 0.7));
 		}
 		
-			#one:hover
-			{
+			#one:hover {
 				background-color: #42b000;
 			}
 		
@@ -86,17 +77,16 @@
 		
 		/* - Grey Button ---*/
 			
-		#two
-		{
+		#two {
 			background-color: #dbdbdb;
-			background-image: -webkit-gradient(linear, left top, left bottom,
-													color-stop(0%, rgba(255, 255, 255, 0.9)),
-													color-stop(100%, rgba(0, 0, 0, 0.6))
-												);
+			background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.6));
+			background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.6));
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(0, 0, 0, 0.6)));
+			background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.6));
+			background-image: linear-gradient(top, rgba(255, 255, 255, 0.9), rgba(0, 0, 0, 0.6));
 		}
 		
-			#two:hover
-			{
+			#two:hover {
 				background-color: #353535;
 			}
 			
@@ -108,17 +98,16 @@
 			
 		/* - Red Button ---*/
 			
-		#three
-		{
+		#three {
 			background-color: #ff3c3c;
-			background-image: -webkit-gradient(linear, left top, left bottom,
-													color-stop(0%, rgba(255, 200, 200, 0.8)),
-													color-stop(100%, rgba(102, 0, 0, 0.8))
-												);
+			background-image: -moz-linear-gradient(top, rgba(255, 200, 200, 0.8), rgba(102, 0, 0, 0.8));
+			background-image: -o-linear-gradient(top, rgba(255, 200, 200, 0.8), rgba(102, 0, 0, 0.8));
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 200, 200, 0.8)), to(rgba(102, 0, 0, 0.8)));
+			background-image: -webkit-linear-gradient(top, rgba(255, 200, 200, 0.8), rgba(102, 0, 0, 0.8));
+			background-image: linear-gradient(top, rgba(255, 200, 200, 0.8), rgba(102, 0, 0, 0.8));
 		}
 		
-			#three:hover
-			{
+			#three:hover {
 				background-color: #6f0000;
 			}
 			
@@ -126,12 +115,10 @@
 		
 		
 		
-		
 		/* - More complex example: This is the button that I needed the solution to create --*/
 		/* -- It has extra styles not relating to the gradient transition example --*/
 		
-		#examples #join-btn
-		{
+		#examples #join-btn {
 			background-color: #fff71a;
 			background-image: -moz-linear-gradient(top, rgba(255, 234, 0, 0.6) 0%, 
 														rgba(255, 228, 0, 0.8) 41%, 
@@ -162,10 +149,9 @@
 								color 0.2s linear;
 		}
 		
-			#examples #join-btn:hover
-			{
+			#examples #join-btn:hover {
 				color: #000;
-				background-color: #f2ab01;
+				background-color: #DB8B00;
 				border-color: #ffb400;
 			}
 	</style>
@@ -177,26 +163,22 @@
 		<a id="two" href="#">Roll Over This</a>
 		<a id="three" href="#">Pala Tute!</a>
 		<a id="join-btn" href="#">Join Today</a>
-		<i>You should view source now</i>
 	</section>
 	
 	<section id="desciption">
-	<h3>What's this all about?</h3>
-	<p>
-		Currently, it seems that it is not possible to animate a webkit-gradient background image with a webkit-transition. 
-		<a href="http://screenflicker.com/mike/code/more-webkit-transition-funniness/">This article</a> says that it is possible, but I've not been able to get it to work following the instructions in the article.
-	</p>
-	<p>
-		<b>This isn't a hack or a perfect solution and it is only for webkit</b>, this is a workaround I used that worked for my purposes, maybe it will work for you.<br/>
-		Instead of animating the background gradient, I animate the background color. I needed to set the colors of the gradient to be partially transparent so you can "see through" them to the background color.
-		Since I was then working with partially transparent colors, I needed to either brighten or darken the colors so that their default state matched what was originally designed. I don't have an exact formula for this, I would just eyeball it until it looked right.
-	</p>
-	<p>
-		Hopefully webkit (and other browsers) will implement the ability to animate background gradients, until then this workaround accomplishes a very similar effect that I am looking for.
-	</p>
-	<p>
-		Follow <a href="http://twitter.com/thegaw">thegaw</a>
-	</p>
+	  <h3>What's this all about?</h3>
+	  <p>
+	  	Currently, it seems that it is not possible to animate a CSS gradient background image with a CSS transition. 
+	  	<a href="http://screenflicker.com/mike/code/more-webkit-transition-funniness/">This article</a> says that it is possible (at the time, only with Webkit), but I've not been able to get it to work following the instructions in the article.
+	  </p>
+	  <p>
+	  	This is a workaround I used that worked for my purposes, maybe it will work for you.<br/>
+	  	Instead of animating the background gradient, I animate the background color. I needed to set the colors of the gradient to be partially transparent so you can see through them to the background color.
+	  	Since I was then working with partially transparent colors, I needed to either brighten or darken the colors so that their default state matched what was originally designed. I don't have an exact formula for this, I would just eyeball it until it looked right.
+	  </p>
+	  <p>
+	  	<a href="http://twitter.com/thegaw">Follow thegaw</a> | <a href="https://github.com/tylergaw/css-gradient-transition-sorta">Fork it on GitHub</a>
+	  </p>
 	</section>
 </body>
 </html>
